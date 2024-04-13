@@ -6,7 +6,15 @@
     <title>Simple Flask App</title>
 </head>
 <body>
-    <h1>Welcome to Simple Flask App</h1>
-    <p>This is a simple Flask web application.</p>
+    <form action="/predict" method="POST">
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+    <h1>Result</h1>
+    <p>URL: {{ url }}</p>
+    <p>Predicted Site Type: {{ predicted_site_type }}</p>
 </body>
 </html>
