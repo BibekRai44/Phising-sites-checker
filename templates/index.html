@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Flask App</title>
+    <title>Url Checker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 500px;
+        }
+        .container1 {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-    <form action="/predict" method="POST">
-        <label for="url">Enter URL:</label>
-        <input type="text" id="url" name="url" required>
-        <button type="submit">Submit</button>
-    </form>
-
-    <br>
-    <h1>Result</h1>
-    <p>URL: {{ url }}</p>
-    <p>Predicted Site Type: {{ predicted_site_type }}</p>
+    <div class="container">
+        <h1 class="mb-4" style="text-align: center;">URL Checker</h1>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="url">Enter URL:</label>
+                <input type="text" class="form-control" id="url" name="url" required>
+            </div>
+            <div class="container1">
+                <button type="submit" class="btn btn-primary">Check URL</button>
+            </div>
+            
+        </form>
+        {% if predicted_site_type %}
+        <div class="mt-4">
+            <p><strong>URL:</strong> {{ url }}</p>
+            <p><strong>Predicted Site Type:</strong> {{ predicted_site_type }}</p>
+        </div>
+        {% endif %}
+    </div>
 </body>
+<br>
+<footer>
+    <div class="container1">
+        <p>Developed by: <a href="https://github.com/BibekRai44" target="_blank">Bibek Rai</a></p>
+    </div>
+</footer>
 </html>
