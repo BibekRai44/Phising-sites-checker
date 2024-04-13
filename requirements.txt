@@ -2,3 +2,4 @@ Flask==2.2.5
 pandas==1.5.3
 openpyxl==3.0.9
 gunicorn==20.1.0
+sklearn
