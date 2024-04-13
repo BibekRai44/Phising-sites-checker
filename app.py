@@ -2,8 +2,8 @@ from flask import Flask,render_template,request
 import pickle
 app = Flask(__name__)
 
-with open('random_forest_model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
+
+model = pickle.load(open('random_forest_model.pkl','rb'))
 
 
 
