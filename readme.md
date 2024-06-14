@@ -4,8 +4,8 @@
 Check whether the site is safe to use or not .
 
 # Tech Stack
-Scikit-learn,Numpy,Pandas,Matplotlib
-Python,Html,Flask
+Scikit-learn,Numpy,Pandas,Matplotlib,
+Python,Html,Flask,sqlite3
 ## Run Locally
 
 Clone the project
