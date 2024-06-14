@@ -1,5 +1,0 @@
-Flask==2.2.5
-pandas==1.5.3
-openpyxl==3.0.9
-gunicorn==22.0.0
-scikit-learn==1.0.1
