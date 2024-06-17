@@ -43,6 +43,15 @@
             justify-content: center;
             height: 100vh;
         }
+
+        .alert-container {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -55,6 +64,19 @@
     <br>
     <div class="container">
         <div class="login-container">
+            <!-- Flash messages section -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="alert-container">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
             <form method="POST" action="{{ url_for('login') }}">
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -71,8 +93,16 @@
             <p>Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a></p>
         </div>
     </div>
-    <br>
-    <footer style="text-align: center;">@2024 Copyright Bibek</footer>
+    <footer>
+        <div class="container1">
+            <p>Developed by: <a href="https://www.linkedin.com/in/bibek-rai-43173b258/" target="_blank">Bibek Rai</a></p>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-qnh6E3kFOdhzyjAFZImz5jcC7/kd2L5AFZK7CRP4Y5pnpnfiTLn5DYks37L6JBhb" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgEP4kM0U6R9QcTrtmI1Ff8szg0pAJlgXj7qLmbGTYjzX52z6I" crossorigin="anonymous"></script>
 </body>
 
 </html>

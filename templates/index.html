@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Url Checker</title>
+    <title>Phishing Site Checker</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -17,11 +17,50 @@
             display: flex;
             justify-content: center;
         }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
     </style>
 </head>
 <body>
+    <div class="logo" style="text-align: center;">
+        <a href="{{url_for('home')}}">
+            <img src="static/images/phising2.png" height="100px" width="auto">
+        </a>
+    </div>
+    <nav class="navbar">
+        <a href="{{url_for('example')}}">
+            <button class="btn btn-outline-primary mr-3">Site Examples</button>
+        </a>
+        <br>
+        <a href="{{ url_for('logout') }}">
+            <button class="btn btn-outline-primary">Log Out</button>
+        </a>
+    </nav>
     <div class="container">
         <h1 class="mb-4" style="text-align: center;">URL Checker</h1>
+        
+        <!-- Flash messages section -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alert-container">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
         <form action="/predict" method="POST">
             <div class="form-group">
                 <label for="url">Enter URL:</label>
@@ -30,8 +69,8 @@
             <div class="container1">
                 <button type="submit" class="btn btn-primary">Check URL</button>
             </div>
-            
         </form>
+        
         {% if predicted_site_type %}
         <div class="mt-4">
             <p><strong>URL:</strong> {{ url }}</p>
@@ -43,7 +82,13 @@
 <br>
 <footer>
     <div class="container1">
-        <p>Developed by: <a href="https://github.com/BibekRai44" target="_blank">Bibek Rai</a></p>
+        <p>Developed by: <a href="https://www.linkedin.com/in/bibek-rai-43173b258/" target="_blank">Bibek Rai</a></p>
     </div>
 </footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>

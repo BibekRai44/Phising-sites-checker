@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Example Phishing and Non-Phishing Sites</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the body stretches to at least the height of the viewport */
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Ensures the container takes up remaining space */
+            margin-bottom: auto; /* Pushes the container to the top */
+        }
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .site-list {
+            margin-top: 20px;
+        }
+        .phishing {
+            color: red;
+        }
+        .non-phishing {
+            color: green;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo" style="text-align: center;">
+        <a href="{{url_for('home')}}">
+            <img src="static/images/phising2.png" height="100px" width="auto">
+        </a>
+    </div>
+    <div class="container">
+        <h1>Example Phishing and Non-Phishing Sites</h1>
+        
+        <div class="site-list">
+            <h2>Phishing Sites:</h2>
+            <ul>
+                <li class="phishing">http://fakebank.com</li>
+                <li class="phishing">https://www.binance.com.com/</li>
+            </ul>
+        </div>
+
+        <div class="site-list">
+            <h2>Non-Phishing Sites:</h2>
+            <ul>
+                <li class="non-phishing">https://github.com/BibekRai44/Phising-sites-checker</li>
+                <li class="non-phishing">https://www.youtube.com/watch?v=0ZMcFvEsRYQ&t=3004s&ab_channel=JoeAshley</li>
+                <li class="non-phishing">http://gmail.com</li>
+                <li class="non-phishing">http://amazon.com</li>
+                <li class="non-phishing">http://paypal.com</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Developed by: <a href="https://www.linkedin.com/in/bibek-rai-43173b258/" target="_blank">Bibek Rai</a></p>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-qnh6E3kFOdhzyjAFZImz5jcC7/kd2L5AFZK7CRP4Y5pnpnfiTLn5DYks37L6JBhb" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgEP4kM0U6R9QcTrtmI1Ff8szg0pAJlgXj7qLmbGTYjzX52z6I" crossorigin="anonymous"></script>
+</body>
+</html>
